@@ -1,8 +1,14 @@
 .background {
     background-image: url('C:\\UNIPAR ADS\\Segundo_Semestre\\code_test\\conference-ticket-generator-main\\assets\\images\\background-desktop.png');
 }
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'inconsolata', ultracondensed, monospace;
+}
 
 .font {
-    font-family: 'inconsolata', sans-serif;
+    
     font-size: 1.25rem;
+    align-items: center;
 }

@@ -14,23 +14,37 @@
 
   <!-- Form starts -->
 
-  Your Journey to Coding Conf 2025 Starts Here!
+  <div class="form-header">
+    <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+  </div>
 
-  Secure your spot at next year's biggest coding conference.
+  <h2>Secure your spot at next year's biggest coding conference.</h2>
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
+  <form action="generate_ticket.php" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="avatar">Upload Avatar</label>
+      <input type="file" id="avatar" name="avatar" accept="image/*">
+      <p>Drag and drop or click to upload</p>
+      <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+    </div>
 
-  Full Name
+    <div class="form-group">
+      <label for="full-name">Full Name</label>
+      <input type="text" id="full-name" name="full-name" required>
+    </div>
 
-  Email Address
-  example@email.com
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
 
-  GitHub Username
-  @yourusername
+    <div class="form-group">
+      <label for="github">GitHub Username</label>
+      <input type="text" id="github" name="github" required>
+    </div>
 
-  Generate My Ticket
+    <button type="submit">Generate My Ticket</button>
+  </form>
 
   <!-- Form ends -->
 
