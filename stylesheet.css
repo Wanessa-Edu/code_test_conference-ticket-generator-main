@@ -1,14 +1,419 @@
-.background {
-    background-image: url('C:\\UNIPAR ADS\\Segundo_Semestre\\code_test\\conference-ticket-generator-main\\assets\\images\\background-desktop.png');
-}
-.form-header {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'inconsolata', ultracondensed, monospace;
+/*espaço pra importação da fonte e peso geral*/
+@font-face {
+    font-family: "Inconsolata";
+    src: url("C:\\UNIPAR ADS\\Segundo_Semestre\\code_test\\conference-ticket-generator-main\\assets\\fonts\\Inconsolata-Regular.ttf") format("truetype");
+    font-weight: 400 800;
 }
 
-.font {
-    
+/* essa é uma versão mais limpa e organizada da paleta de cores.
+    HSL é de Hue, Saturation, Lightness */
+
+:root {
+    /* Neutros: Usados para superfícies, linhas de divisão e hierarquia de texto */
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-100: hsl(252, 6%, 83%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(245, 70%, 10%);
+    /* Laranja: Cor primária de marca e elementos interativos (botões, links, badges) */
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%);
+}
+
+/* ==========================================================================
+   ESTILOS GERAIS DO CORPO (BODY)
+   ========================================================================== */
+* body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--neutral-0);
+    font-family: "Inconsolata", monospace;
+     /* 
+     * Múltiplos Fundos (Camadas ordenadas de cima para baixo):
+     * 1. Linhas de padrão superiores
+     * 2. Linha ondulada decorativa (Topo / Direita)
+     * 3. Linha ondulada decorativa (Base / Esquerda)
+     * 4. Imagem de fundo principal (Textura/Gradiente cobrindo a tela)
+     */
+    background:
+    url("./assets/images/pattern-lines.svg") center top / 100% auto no-repeat,
+    url("./assets/images/pattern-squiggly-line-top.svg") right 5rem top 4.5rem / min(30vw, 450px) auto no-repeat,
+    url("./assets/images/pattern-squiggly-line-bottom-desktop.svg") left bottom / min(58vw, 825px) auto no-repeat,
+    url("./assets/images/background-desktop.png") center / cover no-repeat;
+}
+
+/* circulos decorativos de fundo */
+body::before,
+body::after {
+    position: fixed;
+    z-index: -1;
+    width: 250px;
+    height: 250px;
+    content: "";
+    border: 1px solid hsl(252, 6%, 83%, 0.14);
+    border-radius: 50%
+}
+
+body::before {
+    top: -7rem;
+    left: 4rem;
+    box-shadow: inset 0 0 0 3.6rem var(--neutral-900), inset 0 0 0 3.7rem hsla(252, 6%, 83%, 0.14);
+}
+body::after {
+    right: 16rem;
+    bottom: 15rem;
+    width: 220px;
+    height: 220px;
+    box-shadow: inset 0 0 0 3.2rem transparent, inset 0 0 0 3.3rem hsla(252, 6%, 83%, 0.12);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.page-shell {
+    width: min(100% - 2rem, 48rem);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2.5rem 0 5rem;
+    text-align: center;
+}
+
+.brand {
+    width: 13.5rem;
+    margin-bottom: 3.7rem;
+}
+
+.intro h1 {
+    max-width: 55rem;
+    margin: 0 auto;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.intro p {
+    margin: 1.5rem 0 2.8rem;
+    color: var(--neutral-300);
     font-size: 1.25rem;
-    align-items: center;
+    line-height: 1.45;
+}
+
+.ticket-form {
+    width: min(100%, 28.8rem);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.field {
+    margin-bottom: 1.45rem;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.upload-box {
+    display: grid;
+    min-height:7.8rem;
+    place-items: center;
+    padding: 1rem;
+    color: var(--neutral-300);
+    text-align: center;
+    cursor: pointer;
+    background-color: hsla(245, 19%, 35%, 0.42);
+    border: 1px dashed var(--neutral-500);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(0.5rem);
+}
+
+
+.upload-box:hover,
+.upload-box:focus-within,
+.upload-box.is-dragging {
+  background-color: hsla(245, 19%, 35%, 0.62);
+}
+
+.avatar-preview {
+  display: grid;
+  width: 3.15rem;
+  height: 3.15rem;
+  margin-bottom: 0.9rem;
+  place-items: center;
+  overflow: hidden;
+  background-color: hsla(245, 19%, 35%, 0.78);
+  border: 1px solid hsla(252, 6%, 83%, 0.2);
+  border-radius: 0.75rem;
+}
+
+.avatar-preview img {
+  width: 1.45rem;
+  height: 1.45rem;
+  object-fit: cover;
+}
+
+.avatar-preview.has-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.hint,
+.error {
+  display: flex;
+  min-height: 1.2rem;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.55rem 0 0;
+  color: var(--neutral-300);
+  font-size: 0.78rem;
+}
+
+.error {
+  color: var(--orange-500);
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  height: 3.45rem;
+  padding: 0 1rem;
+  color: var(--neutral-0);
+  background-color: hsla(245, 19%, 35%, 0.32);
+  border: 1px solid var(--neutral-500);
+  border-radius: 0.75rem;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--neutral-300);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover {
+  background-color: hsla(245, 19%, 35%, 0.52);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+.upload-box:focus-within {
+  outline: 2px solid var(--neutral-300);
+  outline-offset: 3px;
+}
+
+.field.has-error input,
+.field.has-error .upload-box {
+  border-color: var(--orange-500);
+}
+
+button {
+  width: 100%;
+  min-height: 3.4rem;
+  color: var(--neutral-900);
+  font-weight: 800;
+  cursor: pointer;
+  background-color: var(--orange-500);
+  border: 0;
+  border-radius: 0.75rem;
+}
+
+button:hover,
+button:focus-visible {
+  background-color: var(--orange-700);
+}
+
+.confirmation-shell {
+  width: min(100% - 2rem, 49rem);
+}
+
+.confirmation-intro h1 {
+  max-width: 48rem;
+}
+
+.confirmation-intro h1 span,
+.confirmation-intro strong {
+  color: var(--orange-500);
+}
+
+.confirmation-intro p {
+  width: min(100%, 33rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.ticket {
+  display: grid;
+  grid-template-columns: 1fr 7rem;
+  width: min(100%, 37.5rem);
+  min-height: 17.5rem;
+  margin: 6.2rem auto 2rem;
+  overflow: hidden;
+  text-align: left;
+  background-image: url("./assets/images/pattern-ticket.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.ticket-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.8rem 1.5rem 1.7rem;
+}
+
+.ticket-heading,
+.ticket-guest {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.ticket-heading img {
+  width: 2.6rem;
+}
+
+.ticket-heading h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.ticket-heading p {
+  margin: 0.85rem 0 0;
+  color: var(--neutral-300);
+}
+
+.ticket-guest > img {
+  width: 5rem;
+  height: 5rem;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.ticket-guest p {
+  margin: 0 0 0.5rem;
+  font-size: 1.9rem;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.ticket-guest span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--neutral-300);
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.ticket-number {
+  display: grid;
+  margin: 0;
+  place-items: center;
+  color: var(--neutral-500);
+  font-size: 1.8rem;
+  writing-mode: vertical-rl;
+}
+
+.back-link {
+  color: var(--neutral-0);
+  font-weight: 700;
+  text-underline-offset: 0.25rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 46rem) {
+  body {
+    background:
+      url("./assets/images/pattern-lines.svg") center top / auto 100% no-repeat,
+      url("./assets/images/pattern-squiggly-line-top.svg") right -2.2rem top 1.5rem / 7rem auto no-repeat,
+      url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg") left bottom / 19rem auto no-repeat,
+      url("./assets/images/background-mobile.png") center / cover no-repeat;
+  }
+
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .page-shell {
+    width: min(100% - 2rem, 27rem);
+    padding-top: 2rem;
+  }
+
+  .brand {
+    width: 10.5rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .intro h1 {
+    font-size: 1.9rem;
+  }
+
+  .intro p {
+    margin-top: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  .ticket {
+    grid-template-columns: 1fr 4.4rem;
+    min-height: 10rem;
+    margin-top: 4rem;
+  }
+
+  .ticket-main {
+    padding: 1rem;
+  }
+
+  .ticket-heading img {
+    width: 1.9rem;
+  }
+
+  .ticket-heading h2 {
+    font-size: 1.45rem;
+  }
+
+  .ticket-heading p {
+    margin-top: 0.45rem;
+    font-size: 0.85rem;
+  }
+
+  .ticket-guest {
+    gap: 0.75rem;
+  }
+
+  .ticket-guest > img {
+    width: 3.1rem;
+    height: 3.1rem;
+    border-radius: 0.5rem;
+  }
+
+  .ticket-guest p {
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+  }
+
+  .ticket-guest span {
+    font-size: 0.85rem;
+  }
+
+  .ticket-number {
+    font-size: 1.25rem;
+  }
 }

@@ -1,17 +1,38 @@
 # Meu desafio
 
-## Background:
+---
+## Background
+Eu tenho experiência avançada em desenvolvimento web e cheguei a fazer uma grande parte do bootcamp da **Dr. Angela Yu** (*The Complete Full-Stack Web Development Bootcamp*).
+Porém, em 2023 o curso passou por uma grande remodelação e acabei perdendo todo o meu progresso (que já passava dos 50%). A frustração na época me fez desanimar e afastar do desenvolvimento web por um tempo.
+Recentemente, decidi me desafiar a voltar e reanimar essas habilidades que estavam "enferrujadas" de **HTML, CSS e JavaScript**. Me propor a este desafio trouxe um impacto super positivo e me motivou novamente!
+ Sem mais delongas, aqui está o processo de construção do projeto...
+---
 
-Eu tenho experiência avançada de desenvolvimento web, comecei o bootcamp da Dr. Angela Yu, Developer and Lead Instructor Developer and Lead Instructor, pelo curso The Complete Full-Stack Web Development Bootcamp.
-Porém, como nem tudo são flores, o curso sofreu uma remodelação no ano de 2023, fazendo com que eu perdesse todo meu progresso que já ultrapassava quase os 50%. Desde então, a frustração fez com que eu perdesse a paixão por desenvolvimento web e desistisse do certificado, porém, com as melhores das minhas habilidades me propus ao desafio e senti um impacto signitificamente satisfatório nas minhas habilidades já enferrujadas de HTML, CSS e JavaScrypt. Pois bem, sem mais delongas...
+## DESENVOLVIMENTO DO HTML ATÉ O CSS
 
 No caso comecei montando o HTML básico.
-No caso do aria-hidden, ele é utilizado para indicar que um elemento não deve ser percebido pelos leitores de tela. Por exemplo, se temos um ícone decorativo que não transmite nenhuma informação relevante, podemos utilizar aria-hidden="true" para que o leitor de tela ignore esse elemento. Já o aria-label é utilizado para fornecer uma descrição acessível para um elemento que não possui um texto visível. Por exemplo, se temos um ícone sem texto, podemos utilizar aria-label para fornecer uma descrição do que esse ícone representa.
+* **`aria-hidden="true"`**: Utilizado em elementos decorativos (como ícones) para que os leitores de tela os ignorem, evitando poluição sonora para usuários que usam leitores de tela.
+* **`aria-label="..."`**: Fornece uma descrição legível para o leitor de tela em elementos visuais que não possuem texto explícito.
 ![Construindo o HTML](<Screenshot 2026-09-13 151457.png>)
 
-Como pode ver preferi deixar a estrutura em inglês ao invés de tentar traduzir todo o site, como sou bilíngue, desta forma funcionaria bem para o meu caso, mantendo seu conteúdo sem mudanças.
+**Opção pelo Idioma:** Optei por manter toda a estrutura do site em **Inglês**. Como sou bilíngue, fez sentido manter o conteúdo original do desafio sem alterar o design ou o sentido das frases.
+
 
 ![montando uma estrutura](image.png)
-nesse caso comecei a montar uma estrutura e lógica por trás.
+Com o HTML pronto, passei para a organização da estrutura e montagem da lógica visual do projeto.
+
 
 ![preview da estrutura](image-1.png)
+
+<video controls src="20260913-2128-10.8239919.mp4" title="Beta-test"></video>
+Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então é apenas um demostrativo, fiz testes apenas para validação visual do fluxo.
+
+
+
+![tex-align](image-2.png)
+* **Unidades Relativas (`rem`)**: Defini todas as medidas em `rem` desde o início para garantir responsividade natural e evitar refatoração posterior.
+* **Centralização**: Utilizei `text-align: center` (e alinhamentos de flexbox/grid) para deixar o projeto totalmente centralizado conforme o protótipo do desafio.
+
+
+<video controls src="20260913-2140-38.5035456.mp4" title="Bonitinho"></video>
+O projeto já está tomando forma e ficando com o visual certinho!
