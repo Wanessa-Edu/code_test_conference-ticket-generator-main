@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="stylesheet" href="./assets/css/styles.css">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Gerador de Ingresso para Conferência</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- vai garantir a exibição correta do site com base no dispositivo do usuário -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets\images\favicon-32x32.png">
+  <link rel="stylesheet" href="stylesheet.css">
+  <title>Conference Ticket Generator</title>
 </head>
 <body>
-
-  <!-- Form starts -->
-
+<main class="page-shell">
+  <!-- Form -->
+  <img class="brand" src="assets\images\logo-full.svg" alt="Coding Conf Logo">
+  <section class="intro" aria-labelledby="Coding Conf 2025"> <!-- titulo da página no navegador -->
   <div class="form-header">
-    <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+    <h1 id="page-title">Your Journey to Coding Conf 2025 Starts Here!</h1>
+    <p>Secure your spot at next year's biggest coding conference.</p>
   </div>
+</section>
 
-  <h2>Secure your spot at next year's biggest coding conference.</h2>
-
-  <form action="generate_ticket.php" method="POST" enctype="multipart/form-data">
-    <div class="form-group">
+<!-- o form pede a foto -->
+  <form class="ticket-form" id="ticketForm" action="./confirmation.html" method="get" novalidate>
+    <div class="field">
       <label for="avatar">Upload Avatar</label>
-      <input type="file" id="avatar" name="avatar" accept="image/*">
-      <p>Drag and drop or click to upload</p>
-      <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+      <label class="upload-box" id="uploadBox" for="avatar">
+        <span class="avatar-preview" id="avatarPreview">
+          <img src="./assets/images/icon-upload.svg" alt="" aria-hidden="true">
+        </span>
+        <span id="uploadText">Drag and drop or click to upload</span>
+        </label>
+        <input class="sr-only" type="file" id="avatar" accept="image/png, image/jpeg">
+        <p class="hint" id="avatarHint">
+          <img src="./assets/images/icon-info.svg" alt="" aria-hidden="true">
+        Upload your photo (JPG or PNG, max size: 500KB).
+      </p>
     </div>
 
     <div class="form-group">
@@ -59,5 +66,6 @@
 
   <!-- Generated tickets ends -->
 
+</main>
 </body>
 </html>
