@@ -4,7 +4,7 @@
 ## Background
 Eu tenho experiência avançada em desenvolvimento web e cheguei a fazer uma grande parte do bootcamp da **Dr. Angela Yu** (*The Complete Full-Stack Web Development Bootcamp*).
 Porém, em 2023 o curso passou por uma grande remodelação e acabei perdendo todo o meu progresso (que já passava dos 50%). A frustração na época me fez desanimar e afastar do desenvolvimento web por um tempo.
-Recentemente, decidi me desafiar a voltar e reanimar essas habilidades que estavam "enferrujadas" de **HTML, CSS e JavaScript**. Me propor a este desafio trouxe um impacto super positivo e me motivou novamente!
+ porém, com as melhores das minhas habilidades me propus ao desafio e senti um impacto signitificamente satisfatório nas minhas habilidades já enferrujadas de **HTML, CSS e JavaScript**.
  Sem mais delongas, aqui está o processo de construção do projeto...
 ---
 
