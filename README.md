@@ -24,7 +24,7 @@ Com o HTML pronto, passei para a organização da estrutura e montagem da lógic
 
 ![preview da estrutura](image-1.png)
 
-<video controls src="20260913-2128-10.8239919.mp4" title="Beta-test"></video>
+[![Beta-Test](https://youtube.com)](https://youtube.com/LE9mEsbndLg)
 Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então é apenas um demostrativo, fiz testes apenas para validação visual do fluxo.
 
 
@@ -34,5 +34,5 @@ Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então
 * **Centralização**: Utilizei `text-align: center` (e alinhamentos de flexbox/grid) para deixar o projeto totalmente centralizado conforme o protótipo do desafio.
 
 
-<video controls src="20260913-2140-38.5035456.mp4" title="Bonitinho"></video>
-O projeto já está tomando forma e ficando com o visual certinho!
+[![Bunitim](https://youtube.com)](https://youtube.com/cv0PwazFVPc)
+O projeto já está tomando forma e ficando com o visual certinho! Já responsivo e proporcional para cada tela.
