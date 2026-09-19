@@ -1,7 +1,7 @@
 /*espaço pra importação da fonte e peso geral*/
 @font-face {
     font-family: "Inconsolata";
-    src: url("C:\\UNIPAR ADS\\Segundo_Semestre\\code_test\\conference-ticket-generator-main\\assets\\fonts\\Inconsolata-Regular.ttf") format("truetype");
+    src: url("./assets/fonts/Inconsolata-Regular.ttf") format("truetype"););
     font-weight: 400 800;
 }
 
@@ -12,6 +12,7 @@
     /* Neutros: Usados para superfícies, linhas de divisão e hierarquia de texto */
     --neutral-0: hsl(0, 0%, 100%);
     --neutral-100: hsl(252, 6%, 83%);
+    --neutral-300: hsl(252, 6%, 83%);
     --neutral-500: hsl(245, 15%, 58%);
     --neutral-700: hsl(245, 19%, 35%);
     --neutral-900: hsl(245, 70%, 10%);
@@ -23,7 +24,7 @@
 /* ==========================================================================
    ESTILOS GERAIS DO CORPO (BODY)
    ========================================================================== */
-* body {
+body {
     min-height: 100vh;
     margin: 0;
     color: var(--neutral-0);
