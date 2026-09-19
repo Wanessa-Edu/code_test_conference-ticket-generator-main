@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./stylesheet.css">
+  <title>Your Coding Conf Ticket</title>
+</head>
+<body>
+  <main class="page-shell confirmation-shell">
+    <img class="brand" src="./assets/images/logo-full.svg" alt="Coding Conf">
+
+    <section class="intro confirmation-intro" aria-labelledby="confirmation-title">
+      <h1 id="confirmation-title">Congrats, <span id="guestName">Guest</span>! Your ticket is ready.</h1>
+      <p>We've emailed your ticket to <strong id="guestEmail">your email</strong> and will send updates in the run up to the event.</p>
+    </section>
+
+    <section class="ticket" aria-label="Generated conference ticket">
+      <div class="ticket-main">
+        <div class="ticket-heading">
+          <img src="./assets/images/logo-mark.svg" alt="" aria-hidden="true">
+          <div>
+            <h2>Coding Conf</h2>
+            <p>Jan 31, 2025 / Austin, TX</p>
+          </div>
+        </div>
+
+        <div class="ticket-guest">
+          <img id="ticketAvatar" src="./assets/images/image-avatar.jpg" alt="">
+          <div>
+            <p id="ticketName">Guest</p>
+            <span>
+              <img src="./assets/images/icon-github.svg" alt="" aria-hidden="true">
+              <span id="ticketGithub">@yourusername</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <p class="ticket-number">#01609</p>
+    </section>
+
+    <a class="back-link" href="./index.html">Create another ticket</a>
+  </main>
+
+  <script src="./confirmation.js"></script>
+</body>
+</html>

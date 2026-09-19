@@ -97,8 +97,11 @@ font-size: clamp(2.6rem, 5vw, 4rem);
 
 ![preview da estrutura](image-1.png)
 
-<video controls src="20260913-2128-10.8239919.mp4" title="Beta-test"></video>
+
+[![Beta-test](https://youtube.com)](https://youtube.com/LE9mEsbndLg)
+
 Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então é apenas um demonstrativo, fiz testes apenas para validação visual do fluxo.
+
 
 ### 4. Ajustes de responsividade e alinhamento
 
@@ -107,8 +110,10 @@ Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então
 * **Centralização**: Utilizei `text-align: center` e alinhamentos de Grid e Flexbox para posicionar o conteúdo conforme o protótipo do desafio.
 
 ### 5. Testes visuais
-<video controls src="20260913-2140-38.5035456.mp4" title="Bonitinho"></video>
+[![visual](https://youtube.com)](https://youtube.com/cv0PwazFVPc)
+
 O projeto já está tomando forma e ficando com o visual certinho!
+
 
 ### 6. Implementação do JavaScript
 
@@ -151,6 +156,22 @@ mantidos permanentemente no navegador.
 Criei o arquivo `confirmation.js` para recuperar os dados enviados pelo
 formulário e preencher o ingresso gerado. O script recupera o nome, o e-mail,
 o usuário do GitHub e o avatar salvo anteriormente.
+
+Durante os testes, encontrei um erro na página de confirmação: o CSS não estava
+sendo aplicado. O problema estava no caminho informado no elemento `<link>` do
+HTML. A página referenciava um arquivo chamado `styles.css`, mas o arquivo
+existente no projeto era `stylesheet.css`. Como o navegador não encontrava a
+folha de estilos, a página era exibida sem a formatação definida no projeto.
+
+![Página sem o CSS aplicado](image-3.png)
+![Página de confirmação sem o CSS aplicado](image-4.png)
+
+Depois de corrigir o caminho para `stylesheet.css`, a página passou a carregar
+os estilos corretamente. Em seguida, finalizei a integração com JavaScript,
+incluindo a validação do formulário, o upload do avatar e a geração do ingresso
+personalizado.
+
+![Resultado final da página de confirmação](image-5.png)
 
 O nome pode ser recebido pela URL através do campo `full-name` ou recuperado do
 `sessionStorage`. Essa adaptação foi necessária porque o formulário utiliza
