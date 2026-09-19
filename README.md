@@ -99,9 +99,7 @@ font-size: clamp(2.6rem, 5vw, 4rem);
 ![preview da estrutura](image-1.png)
 
 
-[Video do beta-test]([URL](https://youtu.be/LE9mEsbndLg))
-
-
+[Caso queira conferir alguns vídeos da versão sem JavaScript](https://www.youtube.com/@Wanessa-Edu)
 
 Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então é apenas um demonstrativo, fiz testes apenas para validação visual do fluxo.
 
