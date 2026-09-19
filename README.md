@@ -98,7 +98,9 @@ font-size: clamp(2.6rem, 5vw, 4rem);
 
 ![preview da estrutura](image-1.png)
 
-[![Beta-test](https://img.youtube.com/vi/LE9mEsbndLgD/maxresdefault.jpg)](https://youtube.com)
+
+[Video do beta-test]([URL](https://youtu.be/LE9mEsbndLg))
+
 
 
 Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então é apenas um demonstrativo, fiz testes apenas para validação visual do fluxo.
@@ -112,7 +114,7 @@ Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então
 
 ### 5. Testes visuais
 
-[![Visual](https://img.youtube.com/vi/cv0PwazFVPc/maxresdefault.jpg)](https://youtube.com)
+[Video do Visual]([URL](https://youtu.be/cv0PwazFVPc)
 
 
 O projeto já está tomando forma e ficando com o visual certinho!
