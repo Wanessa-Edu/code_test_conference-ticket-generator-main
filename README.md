@@ -97,8 +97,8 @@ font-size: clamp(2.6rem, 5vw, 4rem);
 
 ![preview da estrutura](image-1.png)
 
-[![Beta-Test](https://youtube.com)](https://youtube.com/LE9mEsbndLg)
-Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então é apenas um demostrativo, fiz testes apenas para validação visual do fluxo.
+<video controls src="20260913-2128-10.8239919.mp4" title="Beta-test"></video>
+Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então é apenas um demonstrativo, fiz testes apenas para validação visual do fluxo.
 
 ### 4. Ajustes de responsividade e alinhamento
 
@@ -106,6 +106,61 @@ Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então
 * **Unidades relativas**: Utilizei `rem`, porcentagens, `vw` e `clamp()` de acordo com a necessidade de cada elemento, garantindo uma adaptação melhor a diferentes telas.
 * **Centralização**: Utilizei `text-align: center` e alinhamentos de Grid e Flexbox para posicionar o conteúdo conforme o protótipo do desafio.
 
-
-[![Bunitim](https://youtube.com)](https://youtube.com/cv0PwazFVPc)
+### 5. Testes visuais
+<video controls src="20260913-2140-38.5035456.mp4" title="Bonitinho"></video>
 O projeto já está tomando forma e ficando com o visual certinho!
+
+### 6. Implementação do JavaScript
+
+Depois de finalizar a estrutura visual, comecei a adicionar as interações com
+JavaScript. O objetivo foi fazer com que o formulário deixasse de ser apenas
+demonstrativo e passasse a responder às ações do usuário.
+
+#### Upload do avatar
+
+Criei uma função para verificar o arquivo escolhido pelo usuário. O sistema
+confere se o arquivo é uma imagem JPG ou PNG e se possui no máximo 500 KB.
+Quando o arquivo é válido, utilizei `FileReader` para carregá-lo e mostrar uma
+prévia dentro do formulário.
+
+Também implementei a possibilidade de arrastar a imagem para a área de upload.
+Durante o arraste, a classe `.is-dragging` é adicionada para alterar o visual da
+área e indicar que ela está pronta para receber o arquivo.
+
+#### Validação dos campos
+
+Adicionei validações para o nome completo, o endereço de e-mail e o usuário do
+GitHub. Quando algum dado está ausente ou incorreto, a classe `.has-error` é
+adicionada ao campo e uma mensagem é exibida para orientar o usuário.
+
+No e-mail, utilizei uma expressão regular para verificar se o valor possui um
+formato básico de endereço eletrônico.
+
+#### Armazenamento dos dados
+
+Depois que o formulário é validado, os dados são armazenados no
+`sessionStorage`. O avatar é convertido em uma URL de dados para que também
+possa ser utilizado na página de confirmação.
+
+Escolhi o `sessionStorage` porque os dados precisam permanecer disponíveis
+durante a navegação entre o formulário e a página do ingresso, sem serem
+mantidos permanentemente no navegador.
+
+### 7. Página de confirmação
+
+Criei o arquivo `confirmation.js` para recuperar os dados enviados pelo
+formulário e preencher o ingresso gerado. O script recupera o nome, o e-mail,
+o usuário do GitHub e o avatar salvo anteriormente.
+
+O nome pode ser recebido pela URL através do campo `full-name` ou recuperado do
+`sessionStorage`. Essa adaptação foi necessária porque o formulário utiliza
+`full-name` como nome do campo, enquanto a primeira versão do script procurava
+apenas pelo parâmetro `name`.
+
+Também adicionei uma verificação para garantir que o usuário do GitHub seja
+exibido com o símbolo `@` e defini valores padrão para os casos em que algum
+dado não esteja disponível.
+
+Por fim, os dados são inseridos nos elementos correspondentes da página de
+confirmação, permitindo visualizar o ingresso personalizado depois do envio do
+formulário.
