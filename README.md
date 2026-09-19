@@ -43,7 +43,8 @@ pôde ser aplicada em toda a página por meio da propriedade `font-family`.
 ```css
 @font-face {
   font-family: "Inconsolata";
-  src: url("./assets/fonts/Inconsolata-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 400 800;
 }
 ```
 
