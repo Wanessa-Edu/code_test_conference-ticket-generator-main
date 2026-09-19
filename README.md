@@ -114,7 +114,7 @@ Fazendo testes, como não tinha JavaScrypt não tinha retorno do servidor então
 
 ### 5. Testes visuais
 
-[Video do Visual]([URL](https://youtu.be/cv0PwazFVPc)
+[Video do Visual]([URL](https://youtu.be/cv0PwazFVPc))
 
 
 O projeto já está tomando forma e ficando com o visual certinho!
